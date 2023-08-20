@@ -3,7 +3,6 @@
 	<persistence-unit name="myJSFsistema">
 	
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>br.com.myJSFsistema.domain.Funcionario</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/myJSFsistema"/>

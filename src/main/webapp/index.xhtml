@@ -1,19 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Home page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Java Server Faces</title>
 </h:head>
 <h:body>
+	<h:outputLabel value="#{controlePrincipal.mensagem}" />
+	<br />
 	<h:form>
-		<h:inputText id="campoNome" value="#{funcionarioBean.funcionario.name}" />
-		<h:inputText id="campoSobrenome" value="#{funcionarioBean.funcionario.office}" />
-	<h:commandButton value="Salvar" action="#{funcionarioBean.salvar}"/>
+		<div>
+		<br/>
+			<h:outputLabel value="1 - Navegação com JSF" /><br/>
+			<h:commandLink action="sobre" value="Sobre - Navegação estática" />
+			<br />
+			<h:commandLink action="#{controlePrincipal.sobre}"
+				value="Sobre - Navegação dinâmica" />
+			<br />
+			<h:commandLink action="#{controlePrincipal.sobreRedirecionado}"
+				value="Sobre - redirecionado" />
+			<br />
+		</div><br/>
+		<div>
+			<h:outputLabel
+				value="2 - Utilização do Faces-config para navegaçaõ com parâmetros reutilizáveis." />
+			<br />
+			<h:commandLink action="#{controlePrincipal.geraErro}"
+				value="Gera erro" />
+			<br />
+			<h:commandLink action="#{controlePrincipal.geraLogin}"
+				value="Gera login" />
+			<br />
+		</div><br/>
+		<div>
+			<h:outputLabel value="3 - Formulário dinâmico com JSF" />
+			<br />
+			<h:commandLink action="formPessoa" value="cadastro" />
+			<br />
+		</div><br/>
+		<div>
+			<h:outputLabel value="4 - Formulário com link utilizável"/>
+			<br/>
+			<h:commandLink action="formBonus" value="Calculo de bônus" />
+		</div>
 	</h:form>
-	<br/><hr/><br/>
-	
 </h:body>
 </html>
